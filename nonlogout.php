@@ -1,12 +1,15 @@
 <?php
-        session_start();
-        $result = session_destroy();
+session_start();
+unset($_SESSION['id']);
+unset($_SESSION['pw']);
 
-        if($result) {
-?>
-        <script>
-                alert("로그아웃 되었습니다.");
-                history.back();
-        </script>
-<?php   }
-?>
+if(!isset($_SESSION['id'])){
+  ?>
+  <script>
+    alert("로그아웃 되었습니다.");
+    history.back();
+    // location.replace("./index.php");
+  </script>
+  <?php
+}
+ ?>
