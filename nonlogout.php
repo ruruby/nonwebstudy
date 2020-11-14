@@ -7,8 +7,7 @@ if(!isset($_SESSION['id'])){
   ?>
   <script>
     alert("로그아웃 되었습니다.");
-    history.back();
-    // location.replace("./index.php");
+    location.replace("./realindex.php");
   </script>
   <?php
 }
