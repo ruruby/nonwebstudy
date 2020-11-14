@@ -18,6 +18,7 @@ $result=mysqli_query($conn, $sql);
      <script>
      alert("회원가입이 완료되었습니다. 환영합니다!");
      location.replace("./realindex.php")
+
      </script>
      <?php
    }

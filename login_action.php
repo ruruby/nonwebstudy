@@ -18,7 +18,7 @@ if(mysqli_num_rows($result)==1){
       ?>
       <script>
       alert("로그인 성공.");
-      location.replace("./nonboard.php")
+      location.replace("./myblog.php")
       </script>
 <?php
     }
@@ -38,7 +38,7 @@ if(mysqli_num_rows($result)==1){
   else{
     ?>
     <script>
-    alert("로그인 실패");
+    //alert("로그인 실패");
     history.back();
     </script>
 <?php
