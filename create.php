@@ -18,7 +18,7 @@
     html{
       display: table;
       margin: auto;
-      background-color: #6699FF;
+      background-color: #FFD8D8;
     }
 
     .putstring{
@@ -46,8 +46,10 @@
   </head>
 
   <body>
-  <form action="process_create.php" method="POST">
-    <p align="center"><font face="고딕" size="4"><b>SIGN IN</b></font></p><br>
+  <!-- <form action="process_create.php" method="POST"> -->
+  <form action="process_create.php" method="GET">
+
+    <p align="center"><font face="고딕" size="4"><b>SIGN UP</b></font></p><br>
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspUsername
     <input type="text" name="id" id="username" placeholder="아이디" class="putstring"><br><br>
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPassword&nbsp

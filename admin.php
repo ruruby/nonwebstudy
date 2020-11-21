@@ -8,19 +8,17 @@ $user=$_SESSION["id"];
 <!doctype html>
 <head>
 <meta charset="UTF-8">
-<title>My Blog</title>
+<title>admin page</title>
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
 </head>
 <body>
 <div id="board_area">
-
-<?php echo "<h1> $user 의 블로그</h1>";
-// echo $_COOKIE['id']?>
-
-  <h4>글 목록</h4>
-  <FORM action="nonwrite.php" method="post" name="글 작성 페이지">
+  <?php echo "<h1> $user 의 페이지</h1>";?>
+  <!-- <FORM action="nonwrite.php" method="post" name="글 작성 페이지"> -->
     <input type="button" value="WRITE" onclick="location.href='nonwrite.php'" style="float:right;">
-    </FORM><br>
+  <!-- </FORM><br><br> -->
+    <br><br>
+    <h3 align=center>게시글 목록</h3>
     <table class="list-table">
       <thead>
           <tr>
@@ -31,7 +29,7 @@ $user=$_SESSION["id"];
             </tr>
         </thead>
         <?php
-        $query="select * from nonboard where id='$user';";
+        $query="select * from nonboard;";
         $result=mysqli_query($conn, $query) or die("query error");
         while($row=mysqli_fetch_array($result)){?>
           <tr>
@@ -42,6 +40,26 @@ $user=$_SESSION["id"];
         </tr><?php
       }?>
     </table>
+  </div>
+  <div id="member_area"><br><br>
+      <h3 align=center>회원 목록</h3>
+      <table class="list-table">
+        <thead>
+            <tr>
+                <th width="200">아이디</th>
+                <th width="200">비밀번호</th>
+            </tr>
+          </thead>
+          <?php
+          $query="select * from member;";
+          $result=mysqli_query($conn, $query) or die("query error");
+          while($row=mysqli_fetch_array($result)){?>
+            <tr>
+            <td><?php echo $row['id']; ?></td>
+            <td><?php echo $row['pw']; ?></td>
+          </tr><?php
+        }?>
+      </table>
   </div>
 </body>
 </html>
