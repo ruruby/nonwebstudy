@@ -8,13 +8,13 @@ $conn=mysqli_connect("localhost","root","zz1077","nonwebsite") or die("fail");
 $id=$_GET['id'];
 $pw=$_GET['pw'];
 
-$query="select * from member where id = '$id' and pw='$pw'";
-$result=$conn->query($query);
-
-if(isset($result)==True){
-    $_SESSION['id']=$id;
+$query="select * from member where id ='$id' and pw='$pw'";
+$result=mysqli_query($conn, $query);
+$row=mysqli_fetch_assoc($result);
+if(isset($row)==True){
+    $_SESSION['id']=$row['id'];
     setcookie('id',$id);
-    // setcookie('pw',$pw);
+    setcookie('pw',$pw);
     if($_SESSION['id']=='admin'){
       ?>
       <script>
@@ -32,7 +32,7 @@ if(isset($result)==True){
 <?php
     }
   }
-  else{
+else{
     ?>
     <script>
     alert("아이디 혹은 비밀번호 불일치");
